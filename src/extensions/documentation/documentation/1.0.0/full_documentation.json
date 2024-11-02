@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-02T16:39:38.792Z"
+    "x-generation-date": "2024-11-02T17:04:07.155Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -2510,14 +2510,14 @@
         "properties": {
           "data": {
             "required": [
-              "Title",
+              "title",
               "media",
               "link",
               "is_external"
             ],
             "type": "object",
             "properties": {
-              "Title": {
+              "title": {
                 "type": "string"
               },
               "start_at": {
@@ -2607,7 +2607,7 @@
       "Banner": {
         "type": "object",
         "required": [
-          "Title",
+          "title",
           "media",
           "link",
           "is_external"
@@ -2619,7 +2619,7 @@
           "documentId": {
             "type": "string"
           },
-          "Title": {
+          "title": {
             "type": "string"
           },
           "start_at": {
@@ -3285,7 +3285,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "Title": {
+                "title": {
                   "type": "string"
                 },
                 "start_at": {
@@ -3509,14 +3509,14 @@
         "properties": {
           "data": {
             "required": [
-              "Title",
+              "title",
               "media",
               "link",
               "is_external"
             ],
             "type": "object",
             "properties": {
-              "Title": {
+              "title": {
                 "type": "string"
               },
               "start_at": {
@@ -3606,7 +3606,7 @@
       "Slider": {
         "type": "object",
         "required": [
-          "Title",
+          "title",
           "media",
           "link",
           "is_external"
@@ -3618,7 +3618,7 @@
           "documentId": {
             "type": "string"
           },
-          "Title": {
+          "title": {
             "type": "string"
           },
           "start_at": {
@@ -4284,7 +4284,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "Title": {
+                "title": {
                   "type": "string"
                 },
                 "start_at": {
