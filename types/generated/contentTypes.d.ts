@@ -386,6 +386,10 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
     end_at: Schema.Attribute.DateTime;
+    is_external: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    link: Schema.Attribute.Text & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -406,6 +410,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
 export interface ApiSliderSlider extends Struct.CollectionTypeSchema {
   collectionName: 'sliders';
   info: {
+    description: '';
     displayName: 'Slider';
     pluralName: 'sliders';
     singularName: 'slider';
@@ -419,6 +424,10 @@ export interface ApiSliderSlider extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
     end_at: Schema.Attribute.DateTime;
+    is_external: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    link: Schema.Attribute.Text & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

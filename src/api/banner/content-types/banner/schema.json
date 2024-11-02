@@ -35,6 +35,15 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "link": {
+      "type": "text",
+      "required": true
+    },
+    "is_external": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

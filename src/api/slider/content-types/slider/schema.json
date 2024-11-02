@@ -4,7 +4,8 @@
   "info": {
     "singularName": "slider",
     "pluralName": "sliders",
-    "displayName": "Slider"
+    "displayName": "Slider",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,18 +23,27 @@
       "type": "datetime"
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "description": {
       "type": "richtext"
+    },
+    "link": {
+      "type": "text",
+      "required": true
+    },
+    "is_external": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-02T16:01:50.854Z"
+    "x-generation-date": "2024-11-02T16:39:38.792Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -2511,7 +2511,9 @@
           "data": {
             "required": [
               "Title",
-              "media"
+              "media",
+              "link",
+              "is_external"
             ],
             "type": "object",
             "properties": {
@@ -2539,6 +2541,12 @@
               },
               "description": {
                 "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "is_external": {
+                "type": "boolean"
               },
               "locale": {
                 "type": "string"
@@ -2600,7 +2608,9 @@
         "type": "object",
         "required": [
           "Title",
-          "media"
+          "media",
+          "link",
+          "is_external"
         ],
         "properties": {
           "id": {
@@ -3221,6 +3231,12 @@
           "description": {
             "type": "string"
           },
+          "link": {
+            "type": "string"
+          },
+          "is_external": {
+            "type": "boolean"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -3411,6 +3427,12 @@
                 },
                 "description": {
                   "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "is_external": {
+                  "type": "boolean"
                 },
                 "createdAt": {
                   "type": "string",
@@ -3488,7 +3510,9 @@
           "data": {
             "required": [
               "Title",
-              "media"
+              "media",
+              "link",
+              "is_external"
             ],
             "type": "object",
             "properties": {
@@ -3516,6 +3540,12 @@
               },
               "description": {
                 "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "is_external": {
+                "type": "boolean"
               },
               "locale": {
                 "type": "string"
@@ -3577,7 +3607,9 @@
         "type": "object",
         "required": [
           "Title",
-          "media"
+          "media",
+          "link",
+          "is_external"
         ],
         "properties": {
           "id": {
@@ -4198,6 +4230,12 @@
           "description": {
             "type": "string"
           },
+          "link": {
+            "type": "string"
+          },
+          "is_external": {
+            "type": "boolean"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -4388,6 +4426,12 @@
                 },
                 "description": {
                   "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "is_external": {
+                  "type": "boolean"
                 },
                 "createdAt": {
                   "type": "string",
