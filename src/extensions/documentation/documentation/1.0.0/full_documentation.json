@@ -1,4 +1,14 @@
 {
+  "servers": [
+    {
+      "url": "http://localhost:1337/api",
+      "description": "Development server"
+    },
+    {
+      "url": "https://content.bupin.id/api",
+      "description": "Production server"
+    }
+  ],
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
@@ -14,7 +24,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-02T17:04:07.155Z"
+    "x-generation-date": "2024-11-02T23:47:43.045Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -22,12 +32,6 @@
       "users-permissions"
     ]
   },
-  "servers": [
-    {
-      "url": "http://localhost:1337/api",
-      "description": "Development server"
-    }
-  ],
   "externalDocs": {
     "description": "Find out more",
     "url": "https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html"
