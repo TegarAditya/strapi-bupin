@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "floating_action_buttons",
+  "info": {
+    "singularName": "floating-action-button",
+    "pluralName": "floating-action-buttons",
+    "displayName": "Floating Action Button"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    },
+    "is_external": {
+      "type": "boolean",
+      "default": false
+    },
+    "start_at": {
+      "type": "datetime"
+    },
+    "end_at": {
+      "type": "datetime"
+    },
+    "media": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

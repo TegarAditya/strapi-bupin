@@ -407,6 +407,40 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFloatingActionButtonFloatingActionButton
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'floating_action_buttons';
+  info: {
+    displayName: 'Floating Action Button';
+    pluralName: 'floating-action-buttons';
+    singularName: 'floating-action-button';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    end_at: Schema.Attribute.DateTime;
+    is_external: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    link: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::floating-action-button.floating-action-button'
+    > &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    start_at: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSliderSlider extends Struct.CollectionTypeSchema {
   collectionName: 'sliders';
   info: {
@@ -439,6 +473,38 @@ export interface ApiSliderSlider extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     start_at: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSplashScreenSplashScreen
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'splash_screens';
+  info: {
+    displayName: 'Splash Screen';
+    pluralName: 'splash-screens';
+    singularName: 'splash-screen';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    end_at: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::splash-screen.splash-screen'
+    > &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    start_at: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -951,7 +1017,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::banner.banner': ApiBannerBanner;
+      'api::floating-action-button.floating-action-button': ApiFloatingActionButtonFloatingActionButton;
       'api::slider.slider': ApiSliderSlider;
+      'api::splash-screen.splash-screen': ApiSplashScreenSplashScreen;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
