@@ -38,7 +38,7 @@
     },
     "link": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "is_external": {
       "type": "boolean",

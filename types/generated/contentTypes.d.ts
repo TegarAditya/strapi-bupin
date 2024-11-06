@@ -392,7 +392,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     is_external: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    link: Schema.Attribute.Text & Schema.Attribute.Required;
+    link: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -464,7 +464,7 @@ export interface ApiSliderSlider extends Struct.CollectionTypeSchema {
     is_external: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    link: Schema.Attribute.Text & Schema.Attribute.Required;
+    link: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
