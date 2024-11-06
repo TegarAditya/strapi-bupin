@@ -385,6 +385,9 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
+    dismissable: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
     end_at: Schema.Attribute.DateTime;
     is_external: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
