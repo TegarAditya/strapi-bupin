@@ -410,6 +410,33 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'Frequently Asked Question (FAQ)';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    answer: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
+      Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    question: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFloatingActionButtonFloatingActionButton
   extends Struct.CollectionTypeSchema {
   collectionName: 'floating_action_buttons';
@@ -1020,6 +1047,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::banner.banner': ApiBannerBanner;
+      'api::faq.faq': ApiFaqFaq;
       'api::floating-action-button.floating-action-button': ApiFloatingActionButtonFloatingActionButton;
       'api::slider.slider': ApiSliderSlider;
       'api::splash-screen.splash-screen': ApiSplashScreenSplashScreen;
