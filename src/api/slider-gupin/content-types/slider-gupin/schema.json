@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slider_gupins",
+  "info": {
+    "singularName": "slider-gupin",
+    "pluralName": "slider-gupins",
+    "displayName": "Slider Gupin"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "start_at": {
+      "type": "datetime"
+    },
+    "end_at": {
+      "type": "datetime"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "link": {
+      "type": "string"
+    },
+    "is_external": {
+      "type": "boolean"
+    }
+  }
+}

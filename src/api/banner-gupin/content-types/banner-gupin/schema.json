@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "banners",
+  "collectionName": "banner_gupins",
   "info": {
-    "singularName": "banner",
-    "pluralName": "banners",
-    "displayName": "Banner",
+    "singularName": "banner-gupin",
+    "pluralName": "banner-gupins",
+    "displayName": "Banner Gupin",
     "description": ""
   },
   "options": {
@@ -13,8 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "start_at": {
       "type": "datetime"
@@ -23,41 +22,33 @@
       "type": "datetime"
     },
     "media": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "description": {
       "type": "richtext"
     },
     "link": {
-      "type": "text",
-      "required": false
+      "type": "string"
     },
     "is_external": {
-      "type": "boolean",
-      "default": false,
-      "required": true
+      "type": "boolean"
     },
     "dismissable": {
-      "type": "boolean",
-      "default": true,
-      "required": true
+      "type": "boolean"
     },
     "channel": {
       "type": "enumeration",
       "enum": [
         "bupin",
         "gupin"
-      ],
-      "default": "bupin",
-      "required": true
+      ]
     }
   }
 }

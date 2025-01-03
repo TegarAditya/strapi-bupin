@@ -369,6 +369,43 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBannerGupinBannerGupin extends Struct.CollectionTypeSchema {
+  collectionName: 'banner_gupins';
+  info: {
+    description: '';
+    displayName: 'Banner Gupin';
+    pluralName: 'banner-gupins';
+    singularName: 'banner-gupin';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    channel: Schema.Attribute.Enumeration<['bupin', 'gupin']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    dismissable: Schema.Attribute.Boolean;
+    end_at: Schema.Attribute.DateTime;
+    is_external: Schema.Attribute.Boolean;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::banner-gupin.banner-gupin'
+    > &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    start_at: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   collectionName: 'banners';
   info: {
@@ -381,6 +418,9 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    channel: Schema.Attribute.Enumeration<['bupin', 'gupin']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'bupin'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -462,6 +502,40 @@ export interface ApiFloatingActionButtonFloatingActionButton
     > &
       Schema.Attribute.Private;
     media: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    start_at: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSliderGupinSliderGupin extends Struct.CollectionTypeSchema {
+  collectionName: 'slider_gupins';
+  info: {
+    displayName: 'Slider Gupin';
+    pluralName: 'slider-gupins';
+    singularName: 'slider-gupin';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    end_at: Schema.Attribute.DateTime;
+    is_external: Schema.Attribute.Boolean;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::slider-gupin.slider-gupin'
+    > &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     start_at: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
@@ -1046,9 +1120,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::banner-gupin.banner-gupin': ApiBannerGupinBannerGupin;
       'api::banner.banner': ApiBannerBanner;
       'api::faq.faq': ApiFaqFaq;
       'api::floating-action-button.floating-action-button': ApiFloatingActionButtonFloatingActionButton;
+      'api::slider-gupin.slider-gupin': ApiSliderGupinSliderGupin;
       'api::slider.slider': ApiSliderSlider;
       'api::splash-screen.splash-screen': ApiSplashScreenSplashScreen;
       'plugin::content-releases.release': PluginContentReleasesRelease;
