@@ -450,6 +450,45 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEducationSliderEducationSlider
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'education_sliders';
+  info: {
+    description: '';
+    displayName: 'Slider Edukasi Daerah';
+    pluralName: 'education-sliders';
+    singularName: 'education-slider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    city_id: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    end_at: Schema.Attribute.DateTime;
+    is_external: Schema.Attribute.Boolean;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::education-slider.education-slider'
+    > &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    start_at: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -1122,6 +1161,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::banner-gupin.banner-gupin': ApiBannerGupinBannerGupin;
       'api::banner.banner': ApiBannerBanner;
+      'api::education-slider.education-slider': ApiEducationSliderEducationSlider;
       'api::faq.faq': ApiFaqFaq;
       'api::floating-action-button.floating-action-button': ApiFloatingActionButtonFloatingActionButton;
       'api::slider-gupin.slider-gupin': ApiSliderGupinSliderGupin;
