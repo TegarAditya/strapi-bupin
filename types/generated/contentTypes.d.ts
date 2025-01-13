@@ -476,10 +476,7 @@ export interface ApiEducationSliderEducationSlider
       'api::education-slider.education-slider'
     > &
       Schema.Attribute.Private;
-    media: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     start_at: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
