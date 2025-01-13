@@ -23,7 +23,7 @@
     },
     "city_id": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "link": {
       "type": "string"
