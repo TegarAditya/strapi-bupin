@@ -547,6 +547,34 @@ export interface ApiFloatingActionButtonFloatingActionButton
   };
 }
 
+export interface ApiJsonFluidJsonFluid extends Struct.CollectionTypeSchema {
+  collectionName: 'json_fluids';
+  info: {
+    displayName: 'JSON_FLUID';
+    pluralName: 'json-fluids';
+    singularName: 'json-fluid';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::json-fluid.json-fluid'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSliderGupinSliderGupin extends Struct.CollectionTypeSchema {
   collectionName: 'slider_gupins';
   info: {
@@ -1161,6 +1189,7 @@ declare module '@strapi/strapi' {
       'api::education-slider.education-slider': ApiEducationSliderEducationSlider;
       'api::faq.faq': ApiFaqFaq;
       'api::floating-action-button.floating-action-button': ApiFloatingActionButtonFloatingActionButton;
+      'api::json-fluid.json-fluid': ApiJsonFluidJsonFluid;
       'api::slider-gupin.slider-gupin': ApiSliderGupinSliderGupin;
       'api::slider.slider': ApiSliderSlider;
       'api::splash-screen.splash-screen': ApiSplashScreenSplashScreen;

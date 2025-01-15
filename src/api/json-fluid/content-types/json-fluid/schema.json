@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "json_fluids",
+  "info": {
+    "singularName": "json-fluid",
+    "pluralName": "json-fluids",
+    "displayName": "JSON_FLUID"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "json"
+    }
+  }
+}
